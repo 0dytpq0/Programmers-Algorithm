@@ -1,13 +1,11 @@
-function solution(n) {
-    var answer = 0;
-    let num = 2
-    while(n){
-        if(n % num == 1){
-            answer = num
-            break;
+function solution(n, x = 1) {    
+    while (x++) {
+        if (n % x === 1) {
+            return x;
         }
-        num++
-    }
-    
-    return answer;
+    }    
 }
+
+// function solution(n, x = 0) {
+//     return n % x === 1 ? x : solution(n, x + 1);
+// }
