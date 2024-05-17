@@ -8,11 +8,7 @@ function solution(babbling) {
             curBabblingWord.includes(canSpeakWord) ? curBabblingWord = curBabblingWord.replace(canSpeakWord,' ') : null
         })
         curBabblingWord.trim().length === 0 ? answer += 1 : null
-        console.log(answer)
     })
-    
-    console.log(babbling)
-    
     
     return answer;
 }
