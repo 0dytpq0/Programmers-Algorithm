@@ -6,10 +6,9 @@ function solution(price, money, count) {
     let totalPrice = 0;
     for(let i =1; i<=count; i++){
         totalPrice += price * i
-        console.log(price,i)
     }
     console.log(totalPrice)
-    answer = money - totalPrice > 0 ? 0 : Math.abs(money - totalPrice) 
+    answer = money  >  totalPrice ? 0 : Math.abs(money - totalPrice) 
 
     return answer;
 }
