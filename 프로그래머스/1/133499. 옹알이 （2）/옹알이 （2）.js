@@ -1,17 +1,13 @@
 function solution(babbling) {
-    const pronounce = ['aya','ye','woo','ma']
-    let count = 0;
-    for(let i = 0; i< babbling.length; i++){
-        let babble = babbling[i]
-        
-        for(let j =0; j<pronounce.length; j++){
-            if(babble.includes(pronounce[j].repeat(2))) break;
-            
-            babble = babble.split(pronounce[j]).join(' ')
+    const babblables = ["aya", "ye", "woo", "ma"];
+
+    return babbling.reduce((possible, babbl, index) => {
+        for (let i = 0; i < babblables.length; i += 1) {
+            if (babbl.includes(babblables[i].repeat(2))) return possible;
+            babbl = babbl.split(babblables[i]).join(' ').trim();
         }
-        babble = babble.split(' ').join('')
-        babble.length === 0 ? count++ : null
-    }
-    
-    return count;
+        if (babbl) return possible;
+
+        return possible += 1;
+    }, 0)
 }
